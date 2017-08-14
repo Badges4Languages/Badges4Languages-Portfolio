@@ -119,6 +119,9 @@ class B4l_Portfolio {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-b4l-portfolio-public.php';
 
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/initialisation/custom_post_student_portfolio.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/initialisation/custom_post_teacher_portfolio.php';
+
 		$this->loader = new B4l_Portfolio_Loader();
 
 	}
