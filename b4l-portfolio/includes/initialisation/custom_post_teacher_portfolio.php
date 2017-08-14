@@ -36,12 +36,12 @@ function custom_post_teacher_portfolio() {
 		'singular_name'       => 'Teacher Portfolio', 'Post Type Singular Name',
 		'menu_name'           => 'Teacher Portfolio',
 		'parent_item_colon'   => 'Parent Teacher Portfolio',
-		'all_items'           => 'All Teacher Portfolio',
+		'all_items'           => 'Teacher Portfolios',
 		'view_item'           => 'View Teacher Portfolio',
 		'add_new_item'        => 'Add New Teacher Portfolio',
 		'edit_item'           => 'Edit Teacher Portfolio',
 		'update_item'         => 'Update Teacher Portfolio',
-		'search_items'        => 'Search Teacher Portfolio',
+		'search_items'        => 'Search Teacher Portfolios',
 		'not_found'           => 'Not Found',
 		'not_found_in_trash'  => 'Not found in Trash'
 	);
@@ -61,7 +61,7 @@ function custom_post_teacher_portfolio() {
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
-		'show_in_menu'        => true,
+		'show_in_menu'        => 'portfolios',
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
 		'menu_position'       => 5,
@@ -69,7 +69,17 @@ function custom_post_teacher_portfolio() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'page',
+		'capabilities'     => array(
+			'edit_post' => 'edit_teacher_portfolio',
+			'edit_posts' => 'edit_teacher_portfolios',
+			'edit_others_posts' => 'edit_other_teacher_portfolios',
+			'edit_published_posts' => 'edit_published_teacher_portfolios',
+			'publish_posts' => 'publish_teacher_portfolios',
+			'read_post' => 'read_teacher_portfolio',
+			'read_posts' => 'read_teacher_portfolios',
+			'read_private_posts' => 'read_private_teacher_portfolios',
+			'delete_post' => 'delete_teacher_portfolio'
+		)
 
 		//s'taxonomies'          => array( 'category' ),
 	);
@@ -226,8 +236,12 @@ function metabox_teacher()
 		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
 
-		</br></br> <h1 style="margin-left: 850px">Current Result:</h1>
-		<input type="text" name="result"  id="result" style="margin-left:850px "  readonly ></br>
+		</br></br>
+		<div style="float:right;">
+			<h1>Current Result:</h1>
+			<div id="result"></div>
+		</div>
+		</br>
 
 
 			<!--</br></br><p id="result">Result</p></br>-->

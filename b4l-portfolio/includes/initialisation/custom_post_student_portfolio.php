@@ -35,12 +35,12 @@ function custom_post_student_portfolio() {
 		'singular_name'       => 'Student Portfolio',
 		'menu_name'           => 'Student Portfolio',
 		'parent_item_colon'   => 'Parent Student Portfolio',
-		'all_items'           => 'All Student Portfolio',
+		'all_items'           => 'Student Portfolios',
 		'view_item'           => 'View Student Portfolio',
 		'add_new_item'        => 'Add New Student Portfolio',
 		'edit_item'           => 'Edit Student Portfolio',
 		'update_item'         => 'Update Student Portfolio',
-		'search_items'        => 'Search Student Portfolio',
+		'search_items'        => 'Search Student Portfolios',
 		'not_found'           => 'Not Found',
 		'not_found_in_trash'  => 'Not found in Trash'
 	);
@@ -60,7 +60,7 @@ function custom_post_student_portfolio() {
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,
-		'show_in_menu'        => true,
+		'show_in_menu'        => 'portfolios',
 		'show_in_nav_menus'   => true,
 		'show_in_admin_bar'   => true,
 		'menu_position'       => 5,
@@ -68,9 +68,18 @@ function custom_post_student_portfolio() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'page',
+		'capabilities'     => array(
+			'edit_post' => 'edit_student_portfolio',
+			'edit_posts' => 'edit_student_portfolios',
+			'edit_others_posts' => 'edit_other_student_portfolios',
+			'edit_published_posts' => 'edit_published_student_portfolios',
+			'publish_posts' => 'publish_student_portfolios',
+			'read_post' => 'read_student_portfolio',
+			'read_posts' => 'read_student_portfolios',
+			'read_private_posts' => 'read_private_student_portfolios',
+			'delete_post' => 'delete_student_portfolio'
+		)
 
-		//s'taxonomies'          => array( 'category' ),
 	);
 
 	// Registering your Custom Post Type
@@ -189,8 +198,12 @@ function metabox_student()
 		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
-	</br></br> <h1 style="margin-left: 850px">Current Result:</h1>
-	<input type="text" name="result"  id="result" style="margin-left:850px "  readonly ></br>
+	</br></br>
+	<div style="float:right;">
+		<h1>Current Result:</h1>
+		<div id="result"></div>
+	</div>
+	</br>
 
 			<!--</br></br><p id="result">Result</p></br>value="<?php echo $result ?>-->
 

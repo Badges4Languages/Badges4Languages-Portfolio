@@ -17,6 +17,10 @@ jQuery( document ).ready(function() {
 			var T6 = false;
 			var default_result = true;
 
+      var student_badge_start = '<center><img src="../../wp-content/plugins/b4l-portfolio/images/badges/student_levels/';
+      var teacher_badge_start = '<center><img src="../../wp-content/plugins/b4l-portfolio/images/badges/teacher_levels/';
+      var badge_end = '.png" width="100px" height="100px" /></center>';
+
 
 			/// Checking if A1 is activated
 			if(
@@ -28,7 +32,7 @@ jQuery( document ).ready(function() {
 			){
 			  A1 = true;
 				default_result = false;
-				document.getElementById("result").value = "A1";
+				jQuery("#result").html(student_badge_start+'A1'+badge_end);
 			}
 
 
@@ -41,7 +45,7 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("wr2").checked
       ){
 				A2 = true;
-				document.getElementById("result").value = "A2";
+				jQuery("#result").html(student_badge_start+'A2'+badge_end);
 			}
 
 			/// Checking if B1 is activated
@@ -52,7 +56,7 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("sp3").checked &&
 			   		document.getElementById("wr3").checked ){
 				B1 = true;
-				document.getElementById("result").value = "B1";
+				jQuery("#result").html(student_badge_start+'B1'+badge_end);
 			}
 
 			/// Checking if B2 is activated
@@ -63,7 +67,7 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("sp4").checked &&
 			   		document.getElementById("wr4").checked ){
 				B2 = true;
-				document.getElementById("result").value = "B2";
+				jQuery("#result").html(student_badge_start+'B2'+badge_end);
 			}
 
 
@@ -76,7 +80,7 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("wr5").checked
       ){
 				C1 = true;
-				document.getElementById("result").value = "C1";
+				jQuery("#result").html(student_badge_start+'C1'+badge_end);
 			}
 
 
@@ -88,7 +92,7 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("sp6").checked &&
 			   		document.getElementById("wr6").checked ){
 				C2 = true;
-				document.getElementById("result").value = "C2";
+				jQuery("#result").html(student_badge_start+'C2'+badge_end);
 			}
 
       /// Checking if T1 is activated
@@ -107,7 +111,7 @@ jQuery( document ).ready(function() {
       ){
 			  T1 = true;
 				default_result = false;
-				document.getElementById("result").value = "T1";
+				jQuery("#result").html(teacher_badge_start+'T1'+badge_end);
 			}
 
 
@@ -127,7 +131,7 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("dm2").checked
       ){
 				T2 = true;
-				document.getElementById("result").value = "T2";
+				jQuery("#result").html(teacher_badge_start+'T2'+badge_end);
 			}
 
 			/// Checking if T3 is activated
@@ -146,7 +150,7 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("dm3").checked
       ){
 				T3 = true;
-				document.getElementById("result").value = "T3";
+				jQuery("#result").html(teacher_badge_start+'T3'+badge_end);
 			}
 
 			/// Checking if T4 is activated
@@ -165,7 +169,7 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("dm4").checked
       ){
 				T4 = true;
-				document.getElementById("result").value = "T4";
+				jQuery("#result").html(teacher_badge_start+'T4'+badge_end);
 			}
 
 
@@ -185,7 +189,7 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("dm5").checked
       ){
 				T5 = true;
-				document.getElementById("result").value = "T5";
+				jQuery("#result").html(teacher_badge_start+'T5'+badge_end);
 			}
 
 
@@ -205,11 +209,11 @@ jQuery( document ).ready(function() {
 			   		document.getElementById("dm6").checked
       ){
 				T6 = true;
-				document.getElementById("result").value = "T6";
+				jQuery("#result").html(teacher_badge_start+'T6'+badge_end);
 			}
 
 			if(default_result){
-				document.getElementById("result").value = "";
+				jQuery("#result").html("");
 			}
 
 		}, 100);

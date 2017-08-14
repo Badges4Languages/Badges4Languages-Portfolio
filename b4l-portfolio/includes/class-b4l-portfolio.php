@@ -121,6 +121,21 @@ class B4l_Portfolio {
 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/initialisation/custom_post_student_portfolio.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/initialisation/custom_post_teacher_portfolio.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/initialisation/custom_roles.php';
+
+		function portfolios_admin_menu() {
+	    add_menu_page(
+	        'Portfolios',
+	        'Portfolios',
+	        'read',
+	        'portfolios',
+	        '',
+	        plugins_url('../images/portfolios.png', __FILE__),
+					16
+	    );
+		}
+
+		add_action( 'admin_menu', 'portfolios_admin_menu' );
 
 		$this->loader = new B4l_Portfolio_Loader();
 
