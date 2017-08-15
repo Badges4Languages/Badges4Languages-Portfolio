@@ -30,10 +30,10 @@ Plugin/Template Name works with:
 ### 0.1
 
 * **INITIAL VERSION**
-  * #1 Organisation of plugin with the boilerplate architecture. Add of basics functionnalities (teacher and student portfolios custom post types.
-  * #5 Portfolios custom post types pages in the same menu.
-  * #6 Change level text result by image of the badge.
-  * #3 Add of the functionnality for sending the badge to himself. This functionnality need Badges Issuer for WP activated.
+  * Organisation of plugin with the boilerplate architecture. Add of basics functionnalities (teacher and student portfolios custom post types.
+  * Portfolios custom post types pages in the same menu.
+  * Change level text result by image of the badge.
+  * Add of the functionnality for sending the badge to himself. This functionnality need Badges Issuer for WP activated.
 
 ## Upgrade Notice
 
