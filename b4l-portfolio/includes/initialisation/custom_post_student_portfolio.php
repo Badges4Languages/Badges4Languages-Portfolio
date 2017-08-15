@@ -199,15 +199,16 @@ function metabox_student()
 		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 
 	</br></br>
-	<div style="float:right;">
-		<h1>Current Result:</h1>
+	<div id="result_content" style="float:right;">
+		<center><h1>Current Result</h1></center>
 		<div id="result"></div>
 	</div>
 	</br>
 
 			<!--</br></br><p id="result">Result</p></br>value="<?php echo $result ?>-->
 
-			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/javascript.php'); ?>
+			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_student_portfolio.php'); ?>
+			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_send_badge.php'); ?>
 			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/style.php'); ?>
 
 			<script>
