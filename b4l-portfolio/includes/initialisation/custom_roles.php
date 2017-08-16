@@ -13,31 +13,21 @@
 Add capabilities to the existing roles.
 */
 
-function add_portfolios_capabilities() {
+function add_passports_capabilities() {
     // ADMINISTRATOR ROLE
     $admin = get_role('administrator');
 
-    $admin->add_cap('edit_student_portfolio');
-    $admin->add_cap('edit_student_portfolios');
-    $admin->add_cap('edit_other_student_portfolios');
-    $admin->add_cap('edit_published_student_portfolios');
-    $admin->add_cap('publish_student_portfolios');
-    $admin->add_cap('read_student_portfolio');
-    $admin->add_cap('read_student_portfolios');
-    $admin->add_cap('read_private_student_portfolios');
-    $admin->add_cap('delete_student_portfolio');
-
-    $admin->add_cap('edit_teacher_portfolio');
-    $admin->add_cap('edit_teacher_portfolios');
-    $admin->add_cap('edit_other_teacher_portfolios');
-    $admin->add_cap('edit_published_teacher_portfolios');
-    $admin->add_cap('publish_teacher_portfolios');
-    $admin->add_cap('read_teacher_portfolio');
-    $admin->add_cap('read_teacher_portfolios');
-    $admin->add_cap('read_private_teacher_portfolios');
-    $admin->add_cap('delete_teacher_portfolio');
+    $admin->add_cap('edit_passport');
+    $admin->add_cap('edit_passports');
+    $admin->add_cap('edit_other_passports');
+    $admin->add_cap('edit_published_passports');
+    $admin->add_cap('publish_passports');
+    $admin->add_cap('read_passport');
+    $admin->add_cap('read_passports');
+    $admin->add_cap('read_private_passports');
+    $admin->add_cap('delete_passport');
 }
 
-add_action( 'init', 'add_portfolios_capabilities');
+add_action( 'init', 'add_passports_capabilities');
 
 ?>

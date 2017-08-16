@@ -1,13 +1,8 @@
 <?php
 
-function create_student_portfolio_callback(){
+function create_passport_callback(){
   ?>
     <table cellpadding="10">
-      <tr>
-        <td><h3>Select Portfolio Type:</h3></td>
-        <td><input type="radio" name="p_type" value="student"> Student<br></td>
-        <td><input type="radio" name="p_type" value="teacher`"> Teacher<br></td>
-      </tr>
       <tr>
         <td><h3>Select Learning Language:</h3></td>
         <td>
@@ -21,7 +16,7 @@ function create_student_portfolio_callback(){
         </td>
       </tr>
       <tr>
-        <td><h3>Select Portfolio Language:</h3></td>
+        <td><h3>Select Passport Language:</h3></td>
         <td>
           <select>
             <option value="no">  Select</option>
@@ -33,7 +28,7 @@ function create_student_portfolio_callback(){
         </td>
       </tr>
       <tr>
-        <td><button>Create Portfolio</button></td>
+        <td><button>Create Passport</button></td>
       </tr>
     </table>
 <?php

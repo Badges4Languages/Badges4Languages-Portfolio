@@ -13,34 +13,34 @@ wp_enqueue_script('jquery-ui');
 wp_enqueue_script('jquery-ui-tabs');
 wp_enqueue_style( 'wp-admin' );
 
-require_once( 'create-portfolio.php');
+require_once( 'create-passport.php');
 
 function check_student($val) {
 	global $post;
 
-	if(is_array(get_post_meta($post->ID, "student_portfolio", true)))
-		$checkbox_values = get_post_meta($post->ID, "student_portfolio", true);
+	if(is_array(get_post_meta($post->ID, "_passport", true)))
+		$checkbox_values = get_post_meta($post->ID, "_passport", true);
 	else
 		$checkbox_values = array();
 
-		if(in_array($val, $checkbox_values))
+	if(in_array($val, $checkbox_values))
 		return " checked";
 }
 
-function custom_post_student_portfolio() {
+function custom_post_passport() {
 
 // Set UI labels for Custom Post Type
 	$labels = array(
-		'name'                => 'Student Portfolio',
-		'singular_name'       => 'Student Portfolio',
-		'menu_name'           => 'Student Portfolio',
-		'parent_item_colon'   => 'Parent Student Portfolio',
-		'all_items'           => 'Student Portfolios',
-		'view_item'           => 'View Student Portfolio',
-		'add_new_item'        => 'Add New Student Portfolio',
-		'edit_item'           => 'Edit Student Portfolio',
-		'update_item'         => 'Update Student Portfolio',
-		'search_items'        => 'Search Student Portfolios',
+		'name'                => 'Passport',
+		'singular_name'       => 'Passport',
+		'menu_name'           => 'Passport',
+		'parent_item_colon'   => 'Parent Passport',
+		'all_items'           => 'Passports',
+		'view_item'           => 'View Passport',
+		'add_new_item'        => 'Add New Passport',
+		'edit_item'           => 'Edit Passport',
+		'update_item'         => 'Update Passport',
+		'search_items'        => 'Search Passports',
 		'not_found'           => 'Not Found',
 		'not_found_in_trash'  => 'Not found in Trash'
 	);
@@ -48,7 +48,7 @@ function custom_post_student_portfolio() {
 // Set other options for Custom Post Type
 
 	$args = array(
-		'label'               => 'student_portfolio',
+		'label'               => 'passport',
 		'description'         => 'A custom post to assign language levels to students based on their proficiency.',
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
@@ -69,38 +69,38 @@ function custom_post_student_portfolio() {
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'capabilities'     => array(
-			'edit_post' => 'edit_student_portfolio',
-			'edit_posts' => 'edit_student_portfolios',
-			'edit_others_posts' => 'edit_other_student_portfolios',
-			'edit_published_posts' => 'edit_published_student_portfolios',
-			'publish_posts' => 'publish_student_portfolios',
-			'read_post' => 'read_student_portfolio',
-			'read_posts' => 'read_student_portfolios',
-			'read_private_posts' => 'read_private_student_portfolios',
-			'delete_post' => 'delete_student_portfolio'
+			'edit_post' => 'edit_passport',
+			'edit_posts' => 'edit_passports',
+			'edit_others_posts' => 'edit_other_passports',
+			'edit_published_posts' => 'edit_published_passports',
+			'publish_posts' => 'publish_passports',
+			'read_post' => 'read_passport',
+			'read_posts' => 'read_passports',
+			'read_private_posts' => 'read_private_passports',
+			'delete_post' => 'delete_passport'
 		)
 
 	);
 
 	// Registering your Custom Post Type
-	register_post_type( 'student_portfolio', $args );
+	register_post_type( 'passport', $args );
 
 }
 
-add_action( 'init', 'custom_post_student_portfolio');
+add_action( 'init', 'custom_post_passport');
 
 /* Hook into the 'init' action so that the function
 * Containing our post type registration is not
 * unnecessarily executed.
 */
 
-function metabox_student()
+function metabox_passport()
 {
 	add_action('add_meta_boxes', function(){
-		add_meta_box('student', 'Student Portfolio', 'student_grades', 'student_portfolio');
+		add_meta_box('id_passport', 'Passport', 'passport_grades', 'passport');
 	});
 
-	function student_grades($post){
+	function passport_grades($post){
 		$value = 'yes';
 		$counter = 0;
 		$counter_li = 1;
@@ -111,7 +111,7 @@ function metabox_student()
 
 		$result = get_post_meta($post->ID, 'result', true);
 
-		$t_portfolio = array(
+		$t_passport = array(
 
 			 "language" => array(
 
@@ -207,7 +207,7 @@ function metabox_student()
 
 			<!--</br></br><p id="result">Result</p></br>value="<?php echo $result ?>-->
 
-			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_student_portfolio.php'); ?>
+			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_passport.php'); ?>
 			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_send_badge.php'); ?>
 			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/style.php'); ?>
 
@@ -235,8 +235,8 @@ function metabox_student()
         </div>
 				<div id="tabs-1">
 						<?php
-							for($i = 0 ; $i < count($t_portfolio["language"]["li"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="student_portfolio[]" id="li'.$counter_li.'" value="'.$value.$counter.'" style="margin-left: 30px;" ' . check_student($value.$counter) . '>' .  $t_portfolio["language"]["li"][$i+1 . 1]. '</br>';
+							for($i = 0 ; $i < count($t_passport["language"]["li"]); $i++){
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="li'.$counter_li.'" value="'.$value.$counter.'" style="margin-left: 30px;" ' . check_student($value.$counter) . '>' .  $t_passport["language"]["li"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_li++;
 							}
@@ -244,8 +244,8 @@ function metabox_student()
 				</div>
 				<div id="tabs-2">
 							<?php
-							for($i = 0 ; $i < count($t_portfolio["language"]["re"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="student_portfolio[]" id="re'.$counter_re.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '>' .  $t_portfolio["language"]["re"][$i+1 . 1]. '</br>';
+							for($i = 0 ; $i < count($t_passport["language"]["re"]); $i++){
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="re'.$counter_re.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '>' .  $t_passport["language"]["re"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_re++;
 							}
@@ -253,8 +253,8 @@ function metabox_student()
 				</div>
 				<div id="tabs-3">
 						<?php
-							for($i = 0 ; $i < count($t_portfolio["language"]["si"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="student_portfolio[]" id="si'.$counter_si.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '>' .  $t_portfolio["language"]["si"][$i+1 . 1]. '</br>';
+							for($i = 0 ; $i < count($t_passport["language"]["si"]); $i++){
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="si'.$counter_si.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '>' .  $t_passport["language"]["si"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_si++;
 							}
@@ -263,8 +263,8 @@ function metabox_student()
 				</div>
 				<div id="tabs-4">
 						<?php
-							for($i = 0 ; $i < count($t_portfolio["language"]["sp"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="student_portfolio[]" id="sp'.$counter_sp.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '> ' .  $t_portfolio["language"]["sp"][$i+1 . 1]. '</br>';
+							for($i = 0 ; $i < count($t_passport["language"]["sp"]); $i++){
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="sp'.$counter_sp.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '> ' .  $t_passport["language"]["sp"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_sp++;
 							}
@@ -272,8 +272,8 @@ function metabox_student()
 				</div>
 				<div id="tabs-5">
 						<?php
-							for($i = 0 ; $i < count($t_portfolio["language"]["wr"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="student_portfolio[]" id="wr'.$counter_wr.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '> ' .  $t_portfolio["language"]["wr"][$i+1 . 1]. '</br>';
+							for($i = 0 ; $i < count($t_passport["language"]["wr"]); $i++){
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="wr'.$counter_wr.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '> ' .  $t_passport["language"]["wr"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_wr++;
 							}
@@ -285,21 +285,21 @@ function metabox_student()
 	}
 }
 
-add_action('init', 'metabox_student');
+add_action('init', 'metabox_passport');
 
-/* Adds the metabox student portfolio language into the badge custom post type */
+/* Adds the metabox student passport language into the badge custom post type */
 
-add_action('add_meta_boxes','add_meta_box_student_portfolio_language');
+add_action('add_meta_boxes','add_meta_box_passport_language');
 
-function add_meta_box_student_portfolio_language(){
-	add_meta_box('id_meta_box_student_portfolio_language', 'Student portfolio language', 'meta_box_student_portfolio_language', 'student_portfolio', 'side', 'high');
+function add_meta_box_passport_language(){
+	add_meta_box('id_meta_box_passport_language', 'Passport language', 'meta_box_passport_language', 'passport', 'side', 'high');
 }
 
-function meta_box_student_portfolio_language($post){
+function meta_box_passport_language($post){
 	if(is_plugin_active("badges-issuer-for-wp/badges-issuer-for-wp.php")) {
 		$val = "";
-		if(get_post_meta($post->ID,'_portofolio_language',true))
-		  $val = get_post_meta($post->ID,'_portofolio_language',true);
+		if(get_post_meta($post->ID,'_passport_language',true))
+		  $val = get_post_meta($post->ID,'_passport_language',true);
 
 		display_languages_select_form(true, $val);
 	}
@@ -316,14 +316,14 @@ add_action('save_post', function($id){
 			update_post_meta($id, "result", $_POST['result']);
 	}
 
-	if(isset($_POST['student_portfolio'])){
-			update_post_meta($post->ID, "student_portfolio", $_POST['student_portfolio']);
+	if(isset($_POST['passport'])){
+			update_post_meta($post->ID, "_passport", $_POST['passport']);
 	}
 	else
-			update_post_meta($post->ID, "student_portfolio", array());
+			update_post_meta($post->ID, "_passport", array());
 
 	if(isset($_POST['language']))
-		update_post_meta($post->ID, "_portofolio_language", $_POST['language']);
+		update_post_meta($post->ID, "_passport_language", $_POST['language']);
 
 });
 
@@ -333,12 +333,12 @@ add_action('admin_menu', 'sp_add_settings');
 
 function sp_add_settings(){
 	add_submenu_page(
-		'edit.php?post_type=student_portfolio',
-		'Create Portfolio',
+		'edit.php?post_type=passport',
+		'Create Passport',
 		'Settings',
 		'manage_options',
-		'create_portfolio',
-		'create_student_portfolio_callback' );
+		'create_passport',
+		'create_passport_callback' );
 }
 
 ?>
