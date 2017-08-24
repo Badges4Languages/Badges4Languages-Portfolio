@@ -15,7 +15,7 @@ wp_enqueue_style( 'wp-admin' );
 
 require_once( 'create-passport.php');
 
-function check_student($val) {
+function check_passport($val) {
 	global $post;
 
 	if(is_array(get_post_meta($post->ID, "_passport", true)))
@@ -236,7 +236,7 @@ function metabox_passport()
 				<div id="tabs-1">
 						<?php
 							for($i = 0 ; $i < count($t_passport["language"]["li"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="li'.$counter_li.'" value="'.$value.$counter.'" style="margin-left: 30px;" ' . check_student($value.$counter) . '>' .  $t_passport["language"]["li"][$i+1 . 1]. '</br>';
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="li'.$counter_li.'" value="'.$value.$counter.'" style="margin-left: 30px;" ' . check_passport($value.$counter) . '>' .  $t_passport["language"]["li"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_li++;
 							}
@@ -245,7 +245,7 @@ function metabox_passport()
 				<div id="tabs-2">
 							<?php
 							for($i = 0 ; $i < count($t_passport["language"]["re"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="re'.$counter_re.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '>' .  $t_passport["language"]["re"][$i+1 . 1]. '</br>';
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="re'.$counter_re.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '>' .  $t_passport["language"]["re"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_re++;
 							}
@@ -254,7 +254,7 @@ function metabox_passport()
 				<div id="tabs-3">
 						<?php
 							for($i = 0 ; $i < count($t_passport["language"]["si"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="si'.$counter_si.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '>' .  $t_passport["language"]["si"][$i+1 . 1]. '</br>';
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="si'.$counter_si.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '>' .  $t_passport["language"]["si"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_si++;
 							}
@@ -264,7 +264,7 @@ function metabox_passport()
 				<div id="tabs-4">
 						<?php
 							for($i = 0 ; $i < count($t_passport["language"]["sp"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="sp'.$counter_sp.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '> ' .  $t_passport["language"]["sp"][$i+1 . 1]. '</br>';
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="sp'.$counter_sp.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '> ' .  $t_passport["language"]["sp"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_sp++;
 							}
@@ -273,7 +273,7 @@ function metabox_passport()
 				<div id="tabs-5">
 						<?php
 							for($i = 0 ; $i < count($t_passport["language"]["wr"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="wr'.$counter_wr.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_student($value.$counter) . '> ' .  $t_passport["language"]["wr"][$i+1 . 1]. '</br>';
+								echo '<br>'.  '<input type="checkbox" name="passport[]" id="wr'.$counter_wr.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '> ' .  $t_passport["language"]["wr"][$i+1 . 1]. '</br>';
 								$counter++;
 								$counter_wr++;
 							}
