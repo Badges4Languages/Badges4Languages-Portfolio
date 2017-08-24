@@ -301,7 +301,7 @@ function meta_box_passport_language($post){
 		if(get_post_meta($post->ID,'_passport_language',true))
 		  $val = get_post_meta($post->ID,'_passport_language',true);
 
-		display_languages_select_form(true, $val);
+		display_languages_select_form($category="most-important-languages", $language_selected=$val, $multiple=false);
 	}
 }
 
