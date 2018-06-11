@@ -18,13 +18,15 @@ require_once( 'create-passport.php');
 function check_passport($val) {
 	global $post;
 
-	if(is_array(get_post_meta($post->ID, "_passport", true)))
-		$checkbox_values = get_post_meta($post->ID, "_passport", true);
-	else
+	if( is_array( get_post_meta( $post->ID, "_passport", true) ) ){
+		$checkbox_values = get_post_meta( $post->ID, "_passport", true );
+	} else{
 		$checkbox_values = array();
+	}
 
-	if(in_array($val, $checkbox_values))
+	if(in_array($val, $checkbox_values)){
 		return " checked";
+	}
 }
 
 function custom_post_passport() {
@@ -94,8 +96,7 @@ add_action( 'init', 'custom_post_passport');
 * unnecessarily executed.
 */
 
-function metabox_passport()
-{
+function metabox_passport(){
 	add_action('add_meta_boxes', function(){
 		add_meta_box('id_passport', 'Passport', 'passport_grades', 'passport');
 	});
@@ -191,139 +192,271 @@ function metabox_passport()
 
 		?>
 
+		<?php
+			//Listening level
+			$i = 0;
+			while($i <= 5 && in_array( $value.$i, get_post_meta( $post->ID, "_passport", true ) ) ){
+				$i++;
+			}
+			$level_li = get_result($i);
+
+			//Reading level
+			$i = 6;
+			while($i <= 11 && in_array( $value.$i, get_post_meta( $post->ID, "_passport", true ) ) ){
+				$i++;
+			}
+			$level_re = get_result($i);
+
+			//Spoken Interaction level
+			$i = 12;
+			while($i <= 17 && in_array( $value.$i, get_post_meta( $post->ID, "_passport", true ) ) ){
+				$i++;
+			}
+			$level_si = get_result($i);
+
+			//Spoken Production level
+			$i = 18;
+			while($i <= 23 && in_array( $value.$i, get_post_meta( $post->ID, "_passport", true ) ) ){
+				$i++;
+			}
+			$level_sp = get_result($i);
+
+			//Writing level
+			$i = 24;
+			while($i <= 29 && in_array( $value.$i, get_post_meta( $post->ID, "_passport", true ) ) ){
+				$i++;
+			}
+			$level_wr = get_result($i);
+		?>
 
 		<p>
-		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		</p>
 
-	</br></br>
-	<div id="result_content" style="float:right;">
-		<center><h1>Current Result</h1></center>
-		<div id="result"></div>
-	</div>
-	</br>
+		<div id="result_content">
+			<center><h1>Current Result</h1></center>
+			<?php
+				echo "Listening level : " . $level_li . "<br>";
+				echo "Reading level : " . $level_re . "<br>";
+				echo "Spoken Interaction level : " . $level_si . "<br>";
+				echo "Spoken Production level : " . $level_sp . "<br>";
+				echo "Writing level : " . $level_wr . "<br>";
+			?>
+		</div>
 
-			<!--</br></br><p id="result">Result</p></br>value="<?php echo $result ?>-->
+		<!--</br></br><p id="result">Result</p></br>value="<?php echo $result ?>-->
 
-			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_passport.php'); ?>
-			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_send_badge.php'); ?>
-			<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/style.php'); ?>
+		<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_passport.php'); ?>
+		<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_send_badge.php'); ?>
+		<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/style.php'); ?>
 
-			<script>
-        jQuery(document).ready(function(jQuery) {
-          jQuery('#tabs').tabs();
-          jQuery(".nav-tab").click(function(){
-            jQuery(".nav-tab").removeClass("nav-tab-active");
-            jQuery(this).addClass("nav-tab-active");
-          });
-        });
-      </script>
+		<script>
+	        jQuery(document).ready(function(jQuery) {
+		        jQuery('#tabs').tabs();
+		        jQuery(".nav-tab").click(function(){
+			        jQuery(".nav-tab").removeClass("nav-tab-active");
+			        jQuery(this).addClass("nav-tab-active");
+	        	});
+	        });
+	    </script>
 
-			<div id="tabs">
-        <div id="tabs-elements">
-					<h2 class="nav-tab-wrapper">
-	          <ul>
-	            <li><a href="#tabs-1"><div class="nav-tab nav-tab-active"><?php _e( 'Listening','b4l-portofolio' ); ?></div></a></li>
-	            <li><a href="#tabs-2"><div class="nav-tab"><?php _e( 'Reading','b4l-portofolio' ); ?></div></a></li>
-	            <li><a href="#tabs-3"><div class="nav-tab"><?php _e( 'Spoken Interaction','b4l-portofolio' ); ?></div></a></li>
-							<li><a href="#tabs-4"><div class="nav-tab"><?php _e( 'Spoken Production','b4l-portofolio' ); ?></div></a></li>
-							<li><a href="#tabs-5"><div class="nav-tab"><?php _e( 'Writing','b4l-portofolio' ); ?></div></a></li>
-	          </ul>
-					</h2>
-        </div>
-				<div id="tabs-1">
-						<?php
-							for($i = 0 ; $i < count($t_passport["language"]["li"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="li'.$counter_li.'" value="'.$value.$counter.'" style="margin-left: 30px;" ' . check_passport($value.$counter) . '>' .  $t_passport["language"]["li"][$i+1 . 1]. '</br>';
-								$counter++;
-								$counter_li++;
-							}
-						?>
-				</div>
-				<div id="tabs-2">
-							<?php
-							for($i = 0 ; $i < count($t_passport["language"]["re"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="re'.$counter_re.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '>' .  $t_passport["language"]["re"][$i+1 . 1]. '</br>';
-								$counter++;
-								$counter_re++;
-							}
-						?>
-				</div>
-				<div id="tabs-3">
-						<?php
-							for($i = 0 ; $i < count($t_passport["language"]["si"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="si'.$counter_si.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '>' .  $t_passport["language"]["si"][$i+1 . 1]. '</br>';
-								$counter++;
-								$counter_si++;
-							}
-						?>
+		<div id="tabs" style="border: 0px;">
 
-				</div>
-				<div id="tabs-4">
-						<?php
-							for($i = 0 ; $i < count($t_passport["language"]["sp"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="sp'.$counter_sp.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '> ' .  $t_passport["language"]["sp"][$i+1 . 1]. '</br>';
-								$counter++;
-								$counter_sp++;
-							}
-						?>
-				</div>
-				<div id="tabs-5">
-						<?php
-							for($i = 0 ; $i < count($t_passport["language"]["wr"]); $i++){
-								echo '<br>'.  '<input type="checkbox" name="passport[]" id="wr'.$counter_wr.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '> ' .  $t_passport["language"]["wr"][$i+1 . 1]. '</br>';
-								$counter++;
-								$counter_wr++;
-							}
-						?>
-				</div>
+			<h2 class="nav-tab-wrapper">
+	        	<ul>
+		            <li style="border: 0px;"><a href="#tabs-1" class="nav-tab nav-tab-active"><?php _e( 'Listening','b4l-portofolio' ); ?></a></li>
+		            <li style="border: 0px;"><a href="#tabs-2" class="nav-tab"><?php _e( 'Reading','b4l-portofolio' ); ?></a></li>
+		            <li style="border: 0px;"><a href="#tabs-3" class="nav-tab"><?php _e( 'Spoken Interaction','b4l-portofolio' ); ?></a></li>
+					<li style="border: 0px;"><a href="#tabs-4" class="nav-tab"><?php _e( 'Spoken Production','b4l-portofolio' ); ?></a></li>
+					<li style="border: 0px;"><a href="#tabs-5" class="nav-tab"><?php _e( 'Writing','b4l-portofolio' ); ?></a></li>
+	          	</ul>
+			</h2>
+
+			<div id="tabs-1" style="border: 0px;">
+				<?php
+					for($i = 0 ; $i < count($t_passport["language"]["li"]); $i++){
+						echo '<br>'.  '<input type="checkbox" name="passport[]" id="li'.$counter_li.'" value="'.$value.$counter.'" style="margin-left: 30px;" ' . check_passport($value.$counter) . '>' .  $t_passport["language"]["li"][$i+1 . 1]. '</br>';
+						$counter++;
+						$counter_li++;
+					}
+				?>
 			</div>
-		<br />
-		<?php
+
+			<div id="tabs-2" style="border: 0px;">
+				<?php
+					for($i = 0 ; $i < count($t_passport["language"]["re"]); $i++){
+						echo '<br>'.  '<input type="checkbox" name="passport[]" id="re'.$counter_re.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '>' .  $t_passport["language"]["re"][$i+1 . 1]. '</br>';
+						$counter++;
+						$counter_re++;
+					}
+				?>
+			</div>
+
+			<div id="tabs-3" style="border: 0px;">
+				<?php
+					for($i = 0 ; $i < count($t_passport["language"]["si"]); $i++){
+						echo '<br>'.  '<input type="checkbox" name="passport[]" id="si'.$counter_si.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '>' .  $t_passport["language"]["si"][$i+1 . 1]. '</br>';
+						$counter++;
+						$counter_si++;
+					}
+				?>
+
+			</div>
+
+			<div id="tabs-4" style="border: 0px;">
+				<?php
+					for($i = 0 ; $i < count($t_passport["language"]["sp"]); $i++){
+						echo '<br>'.  '<input type="checkbox" name="passport[]" id="sp'.$counter_sp.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '> ' .  $t_passport["language"]["sp"][$i+1 . 1]. '</br>';
+						$counter++;
+						$counter_sp++;
+					}
+				?>
+			</div>
+
+			<div id="tabs-5" style="border: 0px;">
+				<?php
+					for($i = 0 ; $i < count($t_passport["language"]["wr"]); $i++){
+						echo '<br>'.  '<input type="checkbox" name="passport[]" id="wr'.$counter_wr.'" value="'.$value.$counter.'"style="margin-left: 30px;" ' . check_passport($value.$counter) . '> ' .  $t_passport["language"]["wr"][$i+1 . 1]. '</br>';
+						$counter++;
+						$counter_wr++;
+					}
+				?>
+			</div>
+
+		</div>
+	<?php
 	}
 }
+add_action( 'init', 'metabox_passport');
 
-add_action('init', 'metabox_passport');
+function get_result($val){
+	if( in_array( $val, [6, 12, 18, 24, 30] ) ){
+		$result = 'C2';
+	}else{
+		switch ($val%6){
+			case 0:
+				$result = 'No level';
+				break;
+			case 1: 
+				$result = 'A1';
+				break;
+			case 2: 
+				$result = 'A2';
+				break;
+			case 3: 
+				$result = 'B1';
+				break;
+			case 4: 
+				$result = 'B2';
+				break;
+			case 5: 
+				$result = 'C1';
+				break;
+			case -1: 
+				$result = 'C2';
+				break;
+		}
+	}
 
-/* Adds the metabox student passport language into the badge custom post type */
-
-add_action('add_meta_boxes','add_meta_box_passport_language');
-
-function add_meta_box_passport_language(){
-	add_meta_box('id_meta_box_passport_language', 'Passport language', 'meta_box_passport_language', 'passport', 'side', 'high');
+	return $result;
 }
 
-function meta_box_passport_language($post){
-	if(is_plugin_active("badges-issuer-for-wp/badges-issuer-for-wp.php")) {
-		$val = "";
-		if(get_post_meta($post->ID,'_passport_language',true))
-		  $val = get_post_meta($post->ID,'_passport_language',true);
+function metabox_language_passport(){
+	add_action('add_meta_boxes', function(){
+		add_meta_box('id_language_passport', 'Passport language', 'passport_language', 'passport', 'side', 'high');
+	});
 
-		display_languages_select_form($category="most-important-languages", $language_selected=$val, $multiple=false);
+	function passport_language($post){
+		if( is_plugin_active( "open-badges-framework/open-badges-framework.php" ) ) {
+			// Display the children of the right PARENT
+		    $parents = apply_filters( 'plugin_get_sub', $parents );
+		    echo '<div style="margin-bottom:5px;"><b>Most important languages :</b></div>';
+		    ?>
+
+		    <select name="language" id="language">
+		    	<option value="Select">Select</option>
+			    <?php
+				    foreach ((array)$parents['most-important'] as $language) {
+				    	if( get_post_meta( $post->ID,'_passport_language',true ) == $language->term_id ){
+				    		echo '<option selected="selected" value="' . $language->term_id . '">' . $language->name . '</option>';
+				    	}else{
+				    		echo '<option value="' . $language->term_id . '">' . $language->name . '</option>';
+				    	}
+				    }
+			    ?>
+		    </select>
+
+		    <!-- Remove comment to have the list of all fields
+		    <select name="field" id="field"> <option value="Select" selected disabled hidden>Select</option>  -->
+		    <?php
+			    /*foreach ($parents as $parent) {
+			        foreach ($parent as $language) {
+			            echo '<option value="' . $language->term_id . '">';
+			            echo $language->name . '</option>';
+			        }
+			    }*/
+		    ?>
+		    <!-- </select> -->
+
+			<?php	
+		} 
 	}
 }
+add_action('init', 'metabox_language_passport');
+
+function metabox_stud(){
+	add_action('add_meta_boxes', function(){
+		add_meta_box('id_student', 'Student', 'func_student', 'passport', 'side', 'high');
+	});
+
+	function func_student($post){
+		$students = get_users( [ 'role__in' => [ 'student' ] ] ); ?>
+
+		<select name="student" id="student">
+			<option value="Select">Select</option>
+		    <?php
+		    foreach ( $students as $student ) {
+		    	if( get_post_meta( $post->ID,'_student',true ) == $student->ID ){
+		   			echo '<option selected="selected" value="' . $student->ID . '">' . $student->display_name . '</option>';
+		   		}else{
+		   			echo '<option value="' . $student->ID . '">' . $student->display_name . '</option>';
+		   		}
+		   	}
+		    ?>
+	    </select>
+
+	    <?php
+	}
+}
+add_action('init', 'metabox_stud');
 
 add_action('save_post', function($id){
 	global $post;
 
 	if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-			return $post->ID;
+		return $post->ID;
 	}
 
 	if(isset($_POST['result'])){
-			update_post_meta($id, "result", $_POST['result']);
+		update_post_meta($id, "result", $_POST['result']);
 	}
 
 	if(isset($_POST['passport'])){
-			update_post_meta($post->ID, "_passport", $_POST['passport']);
+		update_post_meta($post->ID, "_passport", $_POST['passport']);
+	} else{
+		update_post_meta($post->ID, "_passport", array());
 	}
-	else
-			update_post_meta($post->ID, "_passport", array());
 
-	if(isset($_POST['language']))
+	if(isset($_POST['language'])){
 		update_post_meta($post->ID, "_passport_language", $_POST['language']);
+	}
+
+	if(isset($_POST['student'])){
+		update_post_meta($post->ID, "_student", $_POST['student']);
+	}
 
 });
 
