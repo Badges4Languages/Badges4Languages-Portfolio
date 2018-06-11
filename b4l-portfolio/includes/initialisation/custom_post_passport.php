@@ -247,8 +247,6 @@ function metabox_passport(){
 			?>
 		</div>
 
-		<!--</br></br><p id="result">Result</p></br>value="<?php echo $result ?>-->
-
 		<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_passport.php'); ?>
 		<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/js_send_badge.php'); ?>
 		<?php include(plugin_dir_path( dirname( __FILE__ ) ) . 'utils/style.php'); ?>
@@ -332,6 +330,7 @@ function metabox_passport(){
 }
 add_action( 'init', 'metabox_passport');
 
+//Function to get the level of each field (Listening, Writting, etc.)
 function get_result($val){
 	if( in_array( $val, [6, 12, 18, 24, 30] ) ){
 		$result = 'C2';
@@ -364,6 +363,7 @@ function get_result($val){
 	return $result;
 }
 
+//Add the language metabox
 function metabox_language_passport(){
 	add_action('add_meta_boxes', function(){
 		add_meta_box('id_language_passport', 'Passport language', 'passport_language', 'passport', 'side', 'high');
@@ -407,6 +407,7 @@ function metabox_language_passport(){
 }
 add_action('init', 'metabox_language_passport');
 
+//Add the student metabox (student related to this passport)
 function metabox_stud(){
 	add_action('add_meta_boxes', function(){
 		add_meta_box('id_student', 'Student', 'func_student', 'passport', 'side', 'high');
@@ -433,6 +434,7 @@ function metabox_stud(){
 }
 add_action('init', 'metabox_stud');
 
+//Save all the metaboxes
 add_action('save_post', function($id){
 	global $post;
 
