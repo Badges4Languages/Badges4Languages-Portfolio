@@ -354,9 +354,6 @@ function get_result($val){
 			case 5: 
 				$result = 'C1';
 				break;
-			case -1: 
-				$result = 'C2';
-				break;
 		}
 	}
 
