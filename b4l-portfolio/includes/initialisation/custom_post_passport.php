@@ -110,7 +110,7 @@ function metabox_passport(){
 		$counter_sp = 1;
 		$counter_wr = 1;
 
-		$result = get_post_meta($post->ID, 'result', true);
+		//$result = get_post_meta($post->ID, 'result', true);
 
 		$t_passport = array(
 
@@ -236,6 +236,7 @@ function metabox_passport(){
 			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 		</p>
 
+		<!-- Result of the student levels in each section -->
 		<div id="result_content">
 			<center><h1>Current Result</h1></center>
 			<?php
@@ -261,6 +262,7 @@ function metabox_passport(){
 	        });
 	    </script>
 
+	    <!-- Learning Sections -->
 		<div id="tabs" style="border: 0px;">
 
 			<h2 class="nav-tab-wrapper">
@@ -439,9 +441,9 @@ add_action('save_post', function($id){
 		return $post->ID;
 	}
 
-	if(isset($_POST['result'])){
+	/*if(isset($_POST['result'])){
 		update_post_meta($id, "result", $_POST['result']);
-	}
+	}*/
 
 	if(isset($_POST['passport'])){
 		update_post_meta($post->ID, "_passport", $_POST['passport']);
