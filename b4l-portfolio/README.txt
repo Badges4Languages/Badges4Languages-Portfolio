@@ -25,10 +25,6 @@ For each of these sections, the student can check his competencies. Depends on w
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
 1. Upload the entire b4l-portfolio folder to the /wp-content/plugins/ directory.
 2. Activate the plugin through the ‘Plugins’ menu in WordPress.
 
@@ -37,10 +33,6 @@ e.g.
 = A question that someone might have =
 
 An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
 
 == Screenshots ==
 
