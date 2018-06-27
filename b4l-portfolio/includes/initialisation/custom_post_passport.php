@@ -54,7 +54,7 @@ function custom_post_passport() {
 		'description'         => 'A custom post to assign language levels to students based on their proficiency.',
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
-		'supports'            => array( 'title', 'editor', ),
+		'supports'            => array( 'title', 'editor', 'thumbnail' ),
 		/* A hierarchical CPT is like Pages and can have
 		* Parent and child items. A non-hierarchical CPT
 		* is like Posts.
@@ -202,31 +202,39 @@ function metabox_passport(){
 
 			//Reading level
 			$i = 6;
+			$lvl = 0;
 			while($i <= 11 && in_array( $value.$i, get_post_meta( $post->ID, "_passport", true ) ) ){
 				$i++;
+				$lvl++;
 			}
-			$level_re = get_result($i);
+			$level_re = get_result($lvl);
 
 			//Spoken Interaction level
 			$i = 12;
+			$lvl = 0;
 			while($i <= 17 && in_array( $value.$i, get_post_meta( $post->ID, "_passport", true ) ) ){
 				$i++;
+				$lvl++;
 			}
-			$level_si = get_result($i);
+			$level_si = get_result($lvl);
 
 			//Spoken Production level
 			$i = 18;
+			$lvl = 0;
 			while($i <= 23 && in_array( $value.$i, get_post_meta( $post->ID, "_passport", true ) ) ){
 				$i++;
+				$lvl++;
 			}
-			$level_sp = get_result($i);
+			$level_sp = get_result($lvl);
 
 			//Writing level
 			$i = 24;
+			$lvl = 0;
 			while($i <= 29 && in_array( $value.$i, get_post_meta( $post->ID, "_passport", true ) ) ){
 				$i++;
+				$lvl++;
 			}
-			$level_wr = get_result($i);
+			$level_wr = get_result($lvl);
 		?>
 
 		<p>
@@ -334,29 +342,28 @@ add_action( 'init', 'metabox_passport');
 
 //Function to get the level of each field (Listening, Writting, etc.)
 function get_result($val){
-	if( in_array( $val, [6, 12, 18, 24, 30] ) ){
-		$result = 'C2';
-	}else{
-		switch ($val%6){
-			case 0:
-				$result = 'No level';
-				break;
-			case 1: 
-				$result = 'A1';
-				break;
-			case 2: 
-				$result = 'A2';
-				break;
-			case 3: 
-				$result = 'B1';
-				break;
-			case 4: 
-				$result = 'B2';
-				break;
-			case 5: 
-				$result = 'C1';
-				break;
-		}
+	switch ($val){
+		case 0:
+			$result = 'No level';
+			break;
+		case 1: 
+			$result = 'A1';
+			break;
+		case 2: 
+			$result = 'A2';
+			break;
+		case 3: 
+			$result = 'B1';
+			break;
+		case 4: 
+			$result = 'B2';
+			break;
+		case 5: 
+			$result = 'C1';
+			break;
+		case 6: 
+			$result = 'C2';
+			break;
 	}
 
 	return $result;
@@ -416,7 +423,7 @@ function metabox_stud(){
 		$students = get_users( [ 'role__in' => [ 'student' ] ] ); ?>
 
 		<select name="student" id="student">
-			<option value="Select">Select</option>
+			<option selected="true" disabled="disabled">Select</option>
 		    <?php
 		    foreach ( $students as $student ) {
 		    	if( get_post_meta( $post->ID,'_student',true ) == $student->ID ){
