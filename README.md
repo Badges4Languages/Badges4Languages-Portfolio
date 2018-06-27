@@ -1,7 +1,7 @@
 # Badges4Languages-Portfolio
 A portolio for language students and teachers
 
-Contributors: @colomet, @uzair043, @ntorion
+Contributors: @colomet, @uzair043, @ntorion, leocharlier
 
 Tags: portfolios
 
