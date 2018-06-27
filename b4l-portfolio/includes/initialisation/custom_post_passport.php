@@ -420,7 +420,7 @@ function metabox_stud(){
 	});
 
 	function func_student($post){
-		$students = get_users( [ 'role__in' => [ 'student' ] ] ); ?>
+		$students = get_users(); ?>
 
 		<select name="student" id="student">
 			<option selected="true" disabled="disabled">Select</option>
