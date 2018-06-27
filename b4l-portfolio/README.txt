@@ -45,10 +45,8 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 = 0.1 =
 * **INITIAL VERSION**
-  * Organisation of plugin with the boilerplate architecture. Add of basics functionnalities (teacher and student portfolios custom post types.
+  * Organisation of plugin with the boilerplate architecture. Add of basics functionnalities (student portfolios custom post type).
   * Portfolios custom post types pages in the same menu.
-  * Change level text result by image of the badge.
-  * Add of the functionnality for sending the badge to himself. This functionnality need Badges Issuer for WP activated.
 
 == Upgrade Notice ==
 
