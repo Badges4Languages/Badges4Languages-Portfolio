@@ -124,8 +124,8 @@ class B4l_Portfolio {
 
 		function portfolios_admin_menu() {
 	    add_menu_page(
-	        'Portfolios',
-	        'Portfolios',
+	        __('Portfolios','b4l-portofolio'),
+	        __('Portfolios','b4l-portofolio'),
 	        'read',
 	        'portfolios',
 	        '',

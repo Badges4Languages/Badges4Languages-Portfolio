@@ -1,0 +1,364 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: b4l-portfolio\n"
+"POT-Creation-Date: 2018-06-27 16:38+0200\n"
+"PO-Revision-Date: 2018-06-27 16:38+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.8\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: includes/initialisation\n"
+
+#: includes/initialisation/custom_post_passport.php:36
+#: includes/initialisation/custom_post_passport.php:37
+#: includes/initialisation/custom_post_passport.php:38
+msgid "Passport"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:39
+msgid "Parent Passport"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:40
+msgid "Passports"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:41
+msgid "View Passport"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:42
+msgid "Add New Passport"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:43
+msgid "Edit Passport"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:44
+msgid "Update Passport"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:45
+msgid "Search Passports"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:46
+msgid "Not Found"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:47
+msgid "Not found in Trash"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:54
+msgid ""
+"A custom post to assign language levels to students based on their "
+"proficiency."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:121
+msgid ""
+"I can recognise familiar words and very basic phrases concerning myself, my "
+"family and immediate concrete surroundings when people speak slowly and "
+"clearly."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:122
+msgid ""
+"I can understand phrases and the highest frequency vocabulary related to "
+"areas of most immediate personal relevance (e.g. very basic personal and "
+"family information, shopping, local area, employment).\n"
+"\t\t\t\t\t\tI can catch the main point in short, clear, simple messages and "
+"announcements. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:124
+msgid ""
+"I can understand the main points of clear standard speech on familiar "
+"matters regularly encountered in work, school, leisure, etc.\n"
+"\t\t\t\t\t\tI can understand the main point of many radio or TV programmes "
+"on current affairs or topics of personal or professional interest when the "
+"delivery is relatively slow and clear. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:126
+msgid ""
+"I can understand extended speech and lectures and follow even complex lines "
+"of argument provided the topic is reasonably familiar.\n"
+"\t\t\t\t\t\tI can understand most TV news and current affairs programmes. I "
+"can understand the majority of films in standard dialect. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:128
+msgid ""
+"I can understand extended speech even when it is not clearly structured and "
+"when relationships are only implied and not signalled explicitly.\n"
+"\t\t\t\t\t\tI can understand television programmes and films without too "
+"much effort. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:130
+msgid ""
+"I have no difficulty in understanding any kind of spoken language, whether "
+"live or broadcast, even when delivered at fast native speed, provided.\n"
+"\t\t\t\t\t\tI have some time to get familiar with the accent. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:133
+msgid ""
+"I can understand familiar names, words and very simple sentences, for "
+"example on notices and posters or in catalogues."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:134
+msgid ""
+"I can read very short, simple texts.\n"
+"\t\t\t\t\t\tI can find specific, predictable information in simple everyday "
+"material such as advertisements, prospectuses, menus and timetables and I "
+"can understand short simple personal letters. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:136
+msgid ""
+"I can understand texts that consist mainly of high frequency everyday or job-"
+"related language.\n"
+"\t\t\t\t\t\tI can understand the description of events, feelings and wishes "
+"in personal letters. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:138
+msgid ""
+"I can read articles and reports concerned with contemporary problems in "
+"which the writers adopt particular attitudes or viewpoints.\n"
+"\t\t\t\t\t\tI can understand contemporary literary prose. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:140
+msgid ""
+"I can understand long and complex factual and literary texts, appreciating "
+"distinctions of style.\n"
+"\t\t\t\t\t\tI can understand specialised articles and longer technical "
+"instructions, even when they do not relate to my field. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:142
+msgid ""
+"I can read with ease virtually all forms of the written language, including "
+"abstract, structurally or linguistically complex texts such as manuals, "
+"specialised articles and literary works."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:144
+msgid ""
+"I can interact in a simple way provided the other person is prepared to "
+"repeat or rephrase things at a slower rate of speech and help me formulate "
+"what I'm trying to say.\n"
+"\t\t\t\t\t\tI can ask and answer simple questions in areas of immediate need "
+"or on very familiar topics. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:146
+msgid ""
+"I can communicate in simple and routine tasks requiring a simple and direct "
+"exchange of information on familiar topics and activities.\n"
+"\t\t\t\t\t\tI can handle very short social exchanges, even though I can't "
+"usually understand enough to keep the conversation going myself. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:148
+msgid ""
+"I can deal with most situations likely to arise whilst travelling in an area "
+"where the language is spoken.\n"
+"\t\t\t\t\t\tI can enter unprepared into conversation on topics that are "
+"familiar, of personal interest or pertinent to everyday life (e.g. family, "
+"hobbies, work, travel and current events). "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:150
+msgid ""
+"I can interact with a degree of fluency and spontaneity that makes regular "
+"interaction with native speakers quite possible.\n"
+"\t\t\t\t\t\tI can take an active part in discussion in familiar contexts, "
+"accounting for and sustaining my views. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:152
+msgid ""
+"I can express myself fluently and spontaneously without much obvious "
+"searching for expressions.\n"
+"\t\t\t\t\t\tI can use language flexibly and effectively for social and "
+"professional purposes.\n"
+"\t\t\t\t\t\tI can formulate ideas and opinions with precision and relate my "
+"contribution skilfully to those of other speakers. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:155
+msgid ""
+"I can take part effortlessly in any conversation or discussion and have a "
+"good familiarity with idiomatic expressions and colloquialisms.\n"
+"\t\t\t\t\t\tI can express myself fluently and convey finer shades of meaning "
+"precisely.\n"
+"\t\t\t\t\t\tIf I do have a problem I can backtrack and restructure around "
+"the difficulty so smoothly that other people are hardly aware of it. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:159
+msgid ""
+"I can use simple phrases and sentences to describe where I live and people I "
+"know."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:160
+msgid ""
+"I can use a series of phrases and sentences to describe in simple terms my "
+"family and other people, living conditions, my educational background and my "
+"present or most recent job."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:161
+msgid ""
+"I can connect phrases in a simple way in order to describe experiences and "
+"events, my dreams, hopes and ambitions.\n"
+"\t\t\t\t\t\tI can briefly give reasons and explanations for opinions and "
+"plans.\n"
+"\t\t\t\t\t\tI can narrate a story or relate the plot of a book or film and "
+"describe my reactions. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:164
+msgid ""
+"I can present clear, detailed descriptions on a wide range of subjects "
+"related to my field of interest.\n"
+"\t\t\t\t\t\tI can explain a viewpoint on a topical issue giving the "
+"advantages and disadvantages of various options. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:166
+msgid ""
+"I can present clear, detailed descriptions of complex subjects integrating "
+"sub-themes, developing particular points and rounding off with an "
+"appropriate conclusion."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:167
+msgid ""
+"I can present a clear, smoothly-flowing description or argument in a style "
+"appropriate to the context and with an effective logical structure which "
+"helps the recipient to notice and remember significant points."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:169
+msgid ""
+"I can write a short, simple postcard, for example sending holiday "
+"greetings.\n"
+"\t\t\t\t\t\tI can fill in forms with personal details, for example entering "
+"my name, nationality and address on a hotel registration form. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:171
+msgid ""
+"I can write short, simple notes and messages relating to matters in areas of "
+"immediate needs.\n"
+"\t\t\t\t\t\tI can write a very simple personal letter, for example thanking "
+"someone for something. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:173
+msgid ""
+"I can write simple connected text on topics which are familiar or of "
+"personal interest.\n"
+"\t\t\t\t\t\tI can write personal letters describing experiences and "
+"impressions. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:175
+msgid ""
+"I can write clear, detailed text on a wide range of subjects related to my "
+"interests.\n"
+"\t\t\t\t\t\tI can write an essay or report, passing on information or giving "
+"reasons in support of or against a particular point of view.\n"
+"\t\t\t\t\t\tI can write letters highlighting the personal significance of "
+"events and experiences. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:178
+msgid ""
+"I can express myself in clear, well-structured text, expressing points of "
+"view at some length.\n"
+"\t\t\t\t\t\tI can write about complex subjects in a letter, an essay or a "
+"report, underlining what I consider to be the salient issues.\n"
+"\t\t\t\t\t\tI can select style appropriate to the reader in mind. "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:181
+msgid ""
+"I can write clear, smoothly-flowing text in an appropriate style.\n"
+"\t\t\t\t\t\tI can write complex letters, reports or articles which present a "
+"case with an effective logical structure which helps the recipient to notice "
+"and remember significant points.\n"
+"\t\t\t\t\t\tI can write summaries and reviews of professional or literary "
+"works."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:236
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua.\n"
+"\t\t\tUt enim ad minim veniam, quis nostrud exercitation ullamco laboris "
+"nisi ut aliquip ex ea commodo consequat.\n"
+"\t\t\tDuis aute irure dolor in reprehenderit in voluptate velit esse cillum "
+"dolore eu fugiat nulla pariatur.\n"
+"\t\t\tExcepteur sint occaecat cupidatat non proident, sunt in culpa qui "
+"officia deserunt mollit anim id est laborum."
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:246
+msgid "Listening level : "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:247
+msgid "Reading level : "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:248
+msgid "Spoken Interaction level : "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:249
+msgid "Spoken Production level : "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:250
+msgid "Writing level : "
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:273
+msgid "Listening"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:274
+msgid "Reading"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:275
+msgid "Spoken Interaction"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:276
+msgid "Spoken Production"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:277
+msgid "Writing"
+msgstr ""
+
+#: includes/initialisation/custom_post_passport.php:342
+msgid "No level"
+msgstr ""

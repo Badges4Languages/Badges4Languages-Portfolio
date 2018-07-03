@@ -33,25 +33,25 @@ function custom_post_passport() {
 
 // Set UI labels for Custom Post Type
 	$labels = array(
-		'name'                => 'Passport',
-		'singular_name'       => 'Passport',
-		'menu_name'           => 'Passport',
-		'parent_item_colon'   => 'Parent Passport',
-		'all_items'           => 'Passports',
-		'view_item'           => 'View Passport',
-		'add_new_item'        => 'Add New Passport',
-		'edit_item'           => 'Edit Passport',
-		'update_item'         => 'Update Passport',
-		'search_items'        => 'Search Passports',
-		'not_found'           => 'Not Found',
-		'not_found_in_trash'  => 'Not found in Trash'
+		'name'                => __('Passport','b4l-portofolio'),
+		'singular_name'       => __('Passport','b4l-portofolio'),
+		'menu_name'           => __('Passport','b4l-portofolio'),
+		'parent_item_colon'   => __('Parent Passport','b4l-portofolio'),
+		'all_items'           => __('Passports','b4l-portofolio'),
+		'view_item'           => __('View Passport','b4l-portofolio'),
+		'add_new_item'        => __('Add New Passport','b4l-portofolio'),
+		'edit_item'           => __('Edit Passport','b4l-portofolio'),
+		'update_item'         => __('Update Passport','b4l-portofolio'),
+		'search_items'        => __('Search Passports','b4l-portofolio'),
+		'not_found'           => __('Not Found','b4l-portofolio'),
+		'not_found_in_trash'  => __('Not found in Trash','b4l-portofolio')
 	);
 
 // Set other options for Custom Post Type
 
 	$args = array(
 		'label'               => 'passport',
-		'description'         => 'A custom post to assign language levels to students based on their proficiency.',
+		'description'         => __('A custom post to assign language levels to students based on their proficiency.','b4l-portofolio'),
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
 		'supports'            => array( 'title', 'editor', 'thumbnail' ),
@@ -98,7 +98,7 @@ add_action( 'init', 'custom_post_passport');
 
 function metabox_passport(){
 	add_action('add_meta_boxes', function(){
-		add_meta_box('id_passport', 'Passport', 'passport_grades', 'passport');
+		add_meta_box('id_passport', __('Passport','b4l-portofolio'), 'passport_grades', 'passport');
 	});
 
 	function passport_grades($post){
@@ -118,74 +118,69 @@ function metabox_passport(){
 
 					"li" => array(
 
-						11 => "I can recognise familiar words and very basic phrases concerning myself, my family and immediate concrete surroundings when people speak slowly and clearly.",
-						21 => "I can understand phrases and the highest frequency vocabulary related to areas of most immediate personal relevance (e.g. very basic personal and family information, shopping, local area, employment).
-						I can catch the main point in short, clear, simple messages and announcements. ",
-						31 => "I can understand the main points of clear standard speech on familiar matters regularly encountered in work, school, leisure, etc.
-						I can understand the main point of many radio or TV programmes on current affairs or topics of personal or professional interest when the delivery is relatively slow and clear. ",
-						41 => "I can understand extended speech and lectures and follow even complex lines of argument provided the topic is reasonably familiar.
-						I can understand most TV news and current affairs programmes. I can understand the majority of films in standard dialect. ",
-						51 => "I can understand extended speech even when it is not clearly structured and when relationships are only implied and not signalled explicitly.
-						I can understand television programmes and films without too much effort. ",
-						61 => "I have no difficulty in understanding any kind of spoken language, whether live or broadcast, even when delivered at fast native speed, provided.
-						I have some time to get familiar with the accent. "
-					),
+						11 => __("I can recognise familiar words and very basic phrases concerning myself, my family and immediate concrete surroundings when people speak slowly and clearly.",'b4l-portofolio'),
+						21 => __("I can understand phrases and the highest frequency vocabulary related to areas of most immediate personal relevance (e.g. very basic personal and family information, shopping, local area, employment).
+						I can catch the main point in short, clear, simple messages and announcements. ",'b4l-portofolio'),
+						31 => __("I can understand the main points of clear standard speech on familiar matters regularly encountered in work, school, leisure, etc.
+						I can understand the main point of many radio or TV programmes on current affairs or topics of personal or professional interest when the delivery is relatively slow and clear. ",'b4l-portofolio'),
+						41 => __("I can understand extended speech and lectures and follow even complex lines of argument provided the topic is reasonably familiar.
+						I can understand most TV news and current affairs programmes. I can understand the majority of films in standard dialect. ",'b4l-portofolio'),
+						51 => __("I can understand extended speech even when it is not clearly structured and when relationships are only implied and not signalled explicitly.
+						I can understand television programmes and films without too much effort. ",'b4l-portofolio'),
+						61 => __("I have no difficulty in understanding any kind of spoken language, whether live or broadcast, even when delivered at fast native speed, provided.
+						I have some time to get familiar with the accent. ",'b4l-portofolio')),
 					"re" => array(
-						11 => "I can understand familiar names, words and very simple sentences, for example on notices and posters or in catalogues.",
-						21 => "I can read very short, simple texts.
-						I can find specific, predictable information in simple everyday material such as advertisements, prospectuses, menus and timetables and I can understand short simple personal letters. ",
-						31 => "I can understand texts that consist mainly of high frequency everyday or job-related language.
-						I can understand the description of events, feelings and wishes in personal letters. ",
-						41 => "I can read articles and reports concerned with contemporary problems in which the writers adopt particular attitudes or viewpoints.
-						I can understand contemporary literary prose. ",
-						51 => "I can understand long and complex factual and literary texts, appreciating distinctions of style.
-						I can understand specialised articles and longer technical instructions, even when they do not relate to my field. ",
-						61 => "I can read with ease virtually all forms of the written language, including abstract, structurally or linguistically complex texts such as manuals, specialised articles and literary works."
-					),
+						11 => __("I can understand familiar names, words and very simple sentences, for example on notices and posters or in catalogues.",'b4l-portofolio'),
+						21 => __("I can read very short, simple texts.
+						I can find specific, predictable information in simple everyday material such as advertisements, prospectuses, menus and timetables and I can understand short simple personal letters. ",'b4l-portofolio'),
+						31 => __("I can understand texts that consist mainly of high frequency everyday or job-related language.
+						I can understand the description of events, feelings and wishes in personal letters. ",'b4l-portofolio'),
+						41 => __("I can read articles and reports concerned with contemporary problems in which the writers adopt particular attitudes or viewpoints.
+						I can understand contemporary literary prose. ",'b4l-portofolio'),
+						51 => __("I can understand long and complex factual and literary texts, appreciating distinctions of style.
+						I can understand specialised articles and longer technical instructions, even when they do not relate to my field. ",'b4l-portofolio'),
+						61 => __("I can read with ease virtually all forms of the written language, including abstract, structurally or linguistically complex texts such as manuals, specialised articles and literary works.",'b4l-portofolio')),
 					"si" => array(
-						11 => "I can interact in a simple way provided the other person is prepared to repeat or rephrase things at a slower rate of speech and help me formulate what I'm trying to say.
-						I can ask and answer simple questions in areas of immediate need or on very familiar topics. ",
-						21 => "I can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar topics and activities.
-						I can handle very short social exchanges, even though I can't usually understand enough to keep the conversation going myself. ",
-						31 => "I can deal with most situations likely to arise whilst travelling in an area where the language is spoken.
-						I can enter unprepared into conversation on topics that are familiar, of personal interest or pertinent to everyday life (e.g. family, hobbies, work, travel and current events). ",
-						41 => "I can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible.
-						I can take an active part in discussion in familiar contexts, accounting for and sustaining my views. ",
-						51 => "I can express myself fluently and spontaneously without much obvious searching for expressions.
+						11 => __("I can interact in a simple way provided the other person is prepared to repeat or rephrase things at a slower rate of speech and help me formulate what I'm trying to say.
+						I can ask and answer simple questions in areas of immediate need or on very familiar topics. ",'b4l-portofolio'),
+						21 => __("I can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar topics and activities.
+						I can handle very short social exchanges, even though I can't usually understand enough to keep the conversation going myself. ",'b4l-portofolio'),
+						31 => __("I can deal with most situations likely to arise whilst travelling in an area where the language is spoken.
+						I can enter unprepared into conversation on topics that are familiar, of personal interest or pertinent to everyday life (e.g. family, hobbies, work, travel and current events). ",'b4l-portofolio'),
+						41 => __("I can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible.
+						I can take an active part in discussion in familiar contexts, accounting for and sustaining my views. ",'b4l-portofolio'),
+						51 => __("I can express myself fluently and spontaneously without much obvious searching for expressions.
 						I can use language flexibly and effectively for social and professional purposes.
-						I can formulate ideas and opinions with precision and relate my contribution skilfully to those of other speakers. ",
-						61 => "I can take part effortlessly in any conversation or discussion and have a good familiarity with idiomatic expressions and colloquialisms.
+						I can formulate ideas and opinions with precision and relate my contribution skilfully to those of other speakers. ",'b4l-portofolio'),
+						61 => __("I can take part effortlessly in any conversation or discussion and have a good familiarity with idiomatic expressions and colloquialisms.
 						I can express myself fluently and convey finer shades of meaning precisely.
-						If I do have a problem I can backtrack and restructure around the difficulty so smoothly that other people are hardly aware of it. "
-					),
+						If I do have a problem I can backtrack and restructure around the difficulty so smoothly that other people are hardly aware of it. ",'b4l-portofolio')),
 					"sp" => array(
-						11 => "I can use simple phrases and sentences to describe where I live and people I know.",
-						21 => "I can use a series of phrases and sentences to describe in simple terms my family and other people, living conditions, my educational background and my present or most recent job.",
-						31 => "I can connect phrases in a simple way in order to describe experiences and events, my dreams, hopes and ambitions.
+						11 => __("I can use simple phrases and sentences to describe where I live and people I know.",'b4l-portofolio'),
+						21 => __("I can use a series of phrases and sentences to describe in simple terms my family and other people, living conditions, my educational background and my present or most recent job.",'b4l-portofolio'),
+						31 => __("I can connect phrases in a simple way in order to describe experiences and events, my dreams, hopes and ambitions.
 						I can briefly give reasons and explanations for opinions and plans.
-						I can narrate a story or relate the plot of a book or film and describe my reactions. ",
-						41 => "I can present clear, detailed descriptions on a wide range of subjects related to my field of interest.
-						I can explain a viewpoint on a topical issue giving the advantages and disadvantages of various options. ",
-						51 => "I can present clear, detailed descriptions of complex subjects integrating sub-themes, developing particular points and rounding off with an appropriate conclusion.",
-						61 => "I can present a clear, smoothly-flowing description or argument in a style appropriate to the context and with an effective logical structure which helps the recipient to notice and remember significant points. "
-					),
+						I can narrate a story or relate the plot of a book or film and describe my reactions. ",'b4l-portofolio'),
+						41 => __("I can present clear, detailed descriptions on a wide range of subjects related to my field of interest.
+						I can explain a viewpoint on a topical issue giving the advantages and disadvantages of various options. ",'b4l-portofolio'),
+						51 => __("I can present clear, detailed descriptions of complex subjects integrating sub-themes, developing particular points and rounding off with an appropriate conclusion.",'b4l-portofolio'),
+						61 => __("I can present a clear, smoothly-flowing description or argument in a style appropriate to the context and with an effective logical structure which helps the recipient to notice and remember significant points.",'b4l-portofolio')),
 					"wr" => array(
-						11 => "I can write a short, simple postcard, for example sending holiday greetings.
-						I can fill in forms with personal details, for example entering my name, nationality and address on a hotel registration form. ",
-						21 => "I can write short, simple notes and messages relating to matters in areas of immediate needs.
-						I can write a very simple personal letter, for example thanking someone for something. ",
-						31 => "I can write simple connected text on topics which are familiar or of personal interest.
-						I can write personal letters describing experiences and impressions. ",
-						41 => "I can write clear, detailed text on a wide range of subjects related to my interests.
+						11 => __("I can write a short, simple postcard, for example sending holiday greetings.
+						I can fill in forms with personal details, for example entering my name, nationality and address on a hotel registration form. ",'b4l-portofolio'),
+						21 => __("I can write short, simple notes and messages relating to matters in areas of immediate needs.
+						I can write a very simple personal letter, for example thanking someone for something. ",'b4l-portofolio'),
+						31 => __("I can write simple connected text on topics which are familiar or of personal interest.
+						I can write personal letters describing experiences and impressions. ",'b4l-portofolio'),
+						41 => __("I can write clear, detailed text on a wide range of subjects related to my interests.
 						I can write an essay or report, passing on information or giving reasons in support of or against a particular point of view.
-						I can write letters highlighting the personal significance of events and experiences. ",
-						51 => "I can express myself in clear, well-structured text, expressing points of view at some length.
+						I can write letters highlighting the personal significance of events and experiences. ",'b4l-portofolio'),
+						51 => __("I can express myself in clear, well-structured text, expressing points of view at some length.
 						I can write about complex subjects in a letter, an essay or a report, underlining what I consider to be the salient issues.
-						I can select style appropriate to the reader in mind. ",
-						61 => "I can write clear, smoothly-flowing text in an appropriate style.
+						I can select style appropriate to the reader in mind. ",'b4l-portofolio'),
+						61 => __("I can write clear, smoothly-flowing text in an appropriate style.
 						I can write complex letters, reports or articles which present a case with an effective logical structure which helps the recipient to notice and remember significant points.
-						I can write summaries and reviews of professional or literary works."
-					),
+						I can write summaries and reviews of professional or literary works.",'b4l-portofolio')),
 				)
 
 			);
@@ -238,21 +233,21 @@ function metabox_passport(){
 		?>
 
 		<p>
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			<?php _e("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",'b4l-portofolio') ?>
 		</p>
 
 		<!-- Result of the student levels in each section -->
 		<div id="result_content">
-			<center><h1>Current Result</h1></center>
+			<center><h1><?php _e("Current Result",'b4l-portofolio'); ?></h1></center>
 			<?php
-				echo "Listening level : " . $level_li . "<br>";
-				echo "Reading level : " . $level_re . "<br>";
-				echo "Spoken Interaction level : " . $level_si . "<br>";
-				echo "Spoken Production level : " . $level_sp . "<br>";
-				echo "Writing level : " . $level_wr . "<br>";
+				_e("Listening level : ",'b4l-portofolio') . $level_li . "<br>";
+				_e("Reading level : ",'b4l-portofolio') . $level_re . "<br>";
+				_e("Spoken Interaction level : ",'b4l-portofolio') . $level_si . "<br>";
+				_e("Spoken Production level : ",'b4l-portofolio') . $level_sp . "<br>";
+				_e("Writing level : ",'b4l-portofolio') . $level_wr . "<br>";
 			?>
 		</div>
 
@@ -344,7 +339,7 @@ add_action( 'init', 'metabox_passport');
 function get_result($val){
 	switch ($val){
 		case 0:
-			$result = 'No level';
+			$result = __('No level','b4l-portofolio');
 			break;
 		case 1: 
 			$result = 'A1';
@@ -372,14 +367,14 @@ function get_result($val){
 //Add the language metabox
 function metabox_language_passport(){
 	add_action('add_meta_boxes', function(){
-		add_meta_box('id_language_passport', 'Passport language', 'passport_language', 'passport', 'side', 'high');
+		add_meta_box('id_language_passport', __('Passport language','b4l-portofolio'), 'passport_language', 'passport', 'side', 'high');
 	});
 
 	function passport_language($post){
 		if( is_plugin_active( "open-badges-framework/open-badges-framework.php" ) ) {
 			// Display the children of the right PARENT
 		    $parents = apply_filters( 'plugin_get_sub', $parents );
-		    echo '<div style="margin-bottom:5px;"><b>Most important languages :</b></div>';
+		    echo '<div style="margin-bottom:5px;"><b>' . __('Most important languages','b4l-portofolio') . ':</b></div>';
 		    ?>
 
 		    <select name="language" id="language">
@@ -416,7 +411,7 @@ add_action('init', 'metabox_language_passport');
 //Add the student metabox (student related to this passport)
 function metabox_stud(){
 	add_action('add_meta_boxes', function(){
-		add_meta_box('id_student', 'Student', 'func_student', 'passport', 'side', 'high');
+		add_meta_box('id_student', __('Student','b4l-portofolio'), 'func_student', 'passport', 'side', 'high');
 	});
 
 	function func_student($post){
