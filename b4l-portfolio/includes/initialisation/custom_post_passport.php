@@ -243,11 +243,11 @@ function metabox_passport(){
 		<div id="result_content">
 			<center><h1><?php _e("Current Result",'b4l-portofolio'); ?></h1></center>
 			<?php
-				_e("Listening level : ",'b4l-portofolio') . $level_li . "<br>";
-				_e("Reading level : ",'b4l-portofolio') . $level_re . "<br>";
-				_e("Spoken Interaction level : ",'b4l-portofolio') . $level_si . "<br>";
-				_e("Spoken Production level : ",'b4l-portofolio') . $level_sp . "<br>";
-				_e("Writing level : ",'b4l-portofolio') . $level_wr . "<br>";
+				echo __("Listening level : ",'b4l-portofolio') . $level_li . "<br>";
+				echo __("Reading level : ",'b4l-portofolio') . $level_re . "<br>";
+				echo __("Spoken Interaction level : ",'b4l-portofolio') . $level_si . "<br>";
+				echo __("Spoken Production level : ",'b4l-portofolio') . $level_sp . "<br>";
+				echo __("Writing level : ",'b4l-portofolio') . $level_wr . "<br>";
 			?>
 		</div>
 
